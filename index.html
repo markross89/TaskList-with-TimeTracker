@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>ToDo Workshop with TimeTracker</title>
+  <script src="https://fer-api.coderslab.pl/bootstrap/js/index.min.js"></script>
+  <script>new CL({
+    title: "ToDo App with TimeTracker",
+    path: ["Python", "Warsztat"],
+    fontAwesome: true
+  });</script>
+  <script src="script.js"></script>
+</head>
+<body>
+<main id="app" class="js-tasks-list container mb-5">
+
+  <div class="card shadow">
+    <div class="card-body">
+      <h1 class="card-title">New task</h1>
+      <form class="js-task-adding-form">
+        <div class="form-group">
+          <input type="text"
+                 class="form-control"
+                 name="title"
+                 placeholder="Title"
+                 minlength="5"/>
+        </div>
+        <div class="form-group">
+          <input type="text"
+                 class="form-control"
+                 name="description"
+                 placeholder="Description"
+                 minlength="5"/>
+        </div>
+        <button class="btn btn-info">
+          Add task
+          <i class="fas fa-plus-circle ml-1"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <section class="card mt-5 shadow-sm">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <h5>Przykład otwartego zadania</h5>
+        <h6 class="card-subtitle text-muted">Można je zakończyć, usunąć, oraz dodać nowe operacje</h6>
+      </div>
+      <div>
+        <button class="btn btn-dark btn-sm">Finish</button>
+        <button class="btn btn-outline-danger btn-sm ml-2">Delete</button>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          W otwartym zadaniu istniejącym operacjom można dodać czas
+          <span class="badge badge-success badge-pill ml-2">2h 0m</span>
+        </div>
+        <div>
+          <button class="btn btn-outline-success btn-sm mr-2">+15m</button>
+          <button class="btn btn-outline-success btn-sm mr-2">+1h</button>
+          <button class="btn btn-outline-danger btn-sm">Delete</button>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          W otwartym zadaniu operacje można także usunąć
+          <span class="badge badge-success badge-pill ml-2">15m</span>
+        </div>
+        <div>
+          <button class="btn btn-outline-success btn-sm mr-2">+15m</button>
+          <button class="btn btn-outline-success btn-sm mr-2">+1h</button>
+          <button class="btn btn-outline-danger btn-sm">Delete</button>
+        </div>
+      </li>
+    </ul>
+    <div class="card-body">
+      <form>
+        <div class="input-group">
+          <input type="text" placeholder="Operation description" class="form-control" minlength="5">
+          <div class="input-group-append">
+            <button class="btn btn-info">Add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="card mt-5 shadow-sm">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <h5>Przykład zamkniętego zadania</h5>
+        <h6 class="card-subtitle text-muted">Zamknięte zadanie da się tylko usunąć</h6>
+      </div>
+      <div>
+        <button class="btn btn-outline-danger btn-sm ml-2">Delete</button>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          W zamkniętym zadaniu nie dodasz już czasu do operacji
+          <span class="badge badge-success badge-pill ml-2">2h 0m</span>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          W zamkniętym zadaniu operacji nie da się też usuwać
+          <span class="badge badge-success badge-pill ml-2">15m</span>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          Nie ma też formularza dodawania nowych operacji
+          <span class="badge badge-success badge-pill ml-2">0m</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="card mt-5 shadow-sm">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <h5>Przykład otwartego zadania bez operacji</h5>
+        <h6 class="card-subtitle text-muted">Tak wygląda zadanie które nie ma operacji - lub po prostu jeszcze się nie załadowały</h6>
+      </div>
+      <div>
+        <button class="btn btn-dark btn-sm">Finish</button>
+        <button class="btn btn-outline-danger btn-sm ml-2">Delete</button>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+    </ul>
+    <div class="card-body">
+      <form>
+        <div class="input-group">
+          <input type="text" placeholder="Operation description" class="form-control" minlength="5">
+          <div class="input-group-append">
+            <button class="btn btn-info">Add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+</main>
+</body>
+</html>
